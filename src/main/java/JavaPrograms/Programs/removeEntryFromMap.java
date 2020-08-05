@@ -22,14 +22,18 @@ public class removeEntryFromMap {
 		
 		System.out.println("before: "+certificationCost);
 		
-		Iterator<String> itr=certificationCost.keySet().iterator();
+//		Iterator<String> itr=certificationCost.keySet().iterator();
+//		
+//		while(itr.hasNext()) {
+//			String certificate=itr.next();
+//			if(certificate.contains("OCPJP")) {
+//				itr.remove();
+//			}
+//		}		
+//		System.out.println("after: "+certificationCost);
 		
-		while(itr.hasNext()) {
-			String certificate=itr.next();
-			if(certificate.contains("OCPJP")) {
-				itr.remove();
-			}
-		}		
-		System.out.println("after: "+certificationCost);
+		//using java 8
+		certificationCost.keySet().removeIf(s->s.contains("OCPJP"));
+		System.out.println("After: "+certificationCost);
 	}
 }
